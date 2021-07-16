@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(20, 160, 216);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.img {
+  display: block;
+  width: 100%;
+  height: 937px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-align: center;
+  font-size: xx-large;
+  font-family: cursive;
+}
+
+p {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: larger;
+  text-align: center;
+}
+
+form {
+  text-align: center;
+}
+
+input {
+  height: 20px;
+  width: 300px;
+  margin-bottom: 30px;
+}
+
+button {
+  color: #fff;
+  background-color: rgb(218, 141, 27);
+}
+ul {
+  list-style: none;
+  text-align: center;
+}
+
+.PhonebookFilter {
+  display: flex;
+  justify-content: center;
+}
+
+.HomePageSignIn {
+  position: absolute;
+  top: 0;
+  right: 141px;
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px;
+  font-weight: 700px;
+}
+
+.HomePageSignUp {
+  position: absolute;
+  top: 0;
+  right: 30px;
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px;
+  font-weight: 700px;
+}
+.SignUpView {
+  display: table-caption;
+}
+
+.SignInView {
+  display: table-caption;
+}
+
+.GoBack {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+}
