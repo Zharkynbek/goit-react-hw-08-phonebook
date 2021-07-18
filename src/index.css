@@ -58,7 +58,7 @@ ul {
   justify-content: center;
 }
 
-.HomePageSignIn {
+.HomePageSignUp {
   position: absolute;
   top: 0;
   right: 141px;
@@ -68,7 +68,7 @@ ul {
   font-weight: 700px;
 }
 
-.HomePageSignUp {
+.HomePageSignIn {
   position: absolute;
   top: 0;
   right: 30px;
@@ -87,6 +87,10 @@ ul {
 
 .GoBack {
   position: absolute;
-  top: 30px;
-  right: 50px;
+  top: 0;
+  right: 30px;
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px;
+  font-weight: 700px;
 }

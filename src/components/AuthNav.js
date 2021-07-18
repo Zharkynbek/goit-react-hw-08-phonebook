@@ -4,12 +4,12 @@ import { Button } from "@material-ui/core";
 
 const AuthNav = () => (
   <div>
-    <NavLink to="/register" className="HomePageSignIn">
+    <NavLink to="/register" className="HomePageSignUp">
       <Button variant="contained" color="secondary">
         Sign Up
       </Button>
     </NavLink>
-    <NavLink to="/login" className="HomePageSignUp">
+    <NavLink to="/login" className="HomePageSignIn">
       <Button variant="contained" color="secondary">
         Sign In
       </Button>
