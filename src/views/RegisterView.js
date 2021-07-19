@@ -34,7 +34,7 @@ class RegisterView extends Component {
           </Button>
         </NavLink>
 
-        <form onSubmit={this.handleSubmit} autoComplete="off">
+        <form onSubmit={this.handleSubmit} autoComplete="on">
           <label>
             <p> Name</p>
             <input
