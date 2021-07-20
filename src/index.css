@@ -94,3 +94,35 @@ ul {
   padding: 12px;
   font-weight: 700px;
 }
+
+.Logout {
+  position: absolute;
+  top: 0;
+  right: 30px;
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px;
+  font-weight: 700px;
+}
+
+.Contacts {
+  display: inline-block;
+
+  position: absolute;
+  top: 0;
+  left: 120px;
+  text-decoration: none;
+  margin: 12px;
+  font-weight: 700px;
+}
+
+.Home {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  display: inline-block;
+
+  text-decoration: none;
+  margin: 12px;
+  font-weight: 700px;
+}

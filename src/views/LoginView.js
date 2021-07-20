@@ -33,12 +33,6 @@ class LoginView extends Component {
     return (
       <div>
         <h1>Please, Sign In</h1>
-        {/* <NavLink to="/" className="GoBack">
-          <Button variant="contained" color="primary">
-            Go Back
-          </Button>
-        </NavLink> */}
-
         <form onSubmit={this.handleSubmit} autoComplete="off">
           <label>
             <p>Email</p>

@@ -12,20 +12,7 @@ const token = {
   },
 };
 
-// const register = (credentials) => async (dispatch) => {
-//   dispatch(authActions.registerRequest());
-//   console.log(credentials);
-//   try {
-//     const response = await axios.post("/users/signup", credentials);
-
-//     console.log(response.data);
-//     dispatch(authActions.registerSuccess(response.data));
-//   } catch (error) {
-//     dispatch(authActions.registerError(error));
-//   }
-// };
-
-export const register = (credentials) => (dispatch) => {
+const register = (credentials) => (dispatch) => {
   dispatch(authActions.registerRequest());
 
   axios
@@ -37,7 +24,7 @@ export const register = (credentials) => (dispatch) => {
     .catch((error) => dispatch(authActions.registerError(error.message)));
 };
 
-export const login = (credentials) => (dispatch) => {
+const login = (credentials) => (dispatch) => {
   dispatch(authActions.loginRequest());
 
   axios
@@ -60,23 +47,6 @@ export const logout = () => (dispatch) => {
     })
     .catch((error) => dispatch(authActions.logoutError(error.message)));
 };
-
-// export const getCurrentUser = () => (dispatch, getState) => {
-//   const state = getState();
-//   if (!state.auth.token) {
-//     return;
-//   }
-//   token.set(state.auth.token);
-
-//   dispatch(authActions.getCurrentUserRequest());
-
-//   axios
-//     .get("/users/current")
-//     .then(({ data }) => {
-//       dispatch(authActions.getCurrentUserSuccess(data));
-//     })
-//     .catch((error) => dispatch(authActions.getCurrentUserError(error.message)));
-// };
 
 const getCurrentUser = () => (dispatch, getState) => {
   const {

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addContact } from "../../redux/contacts/phoenbookOperations";
 import shortid from "shortid";
+import { Button } from "@material-ui/core";
 
 class PhonebookForm extends Component {
   state = {
@@ -60,7 +61,9 @@ class PhonebookForm extends Component {
             />
           </label>
           <br />
-          <button>Add Contact</button>
+          <Button variant="contained" color="secondary">
+            Add Contact
+          </Button>
         </form>
       </div>
     );

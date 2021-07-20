@@ -10,12 +10,12 @@ const AuthNav = ({ userName, isAuthorized, onLogout }) => {
   return (
     <div>
       <div>
-        <NavLink to="/">
+        <NavLink to="/" className="Home">
           <Button variant="contained" color="secondary">
             Home
           </Button>
         </NavLink>
-        <NavLink to="/contacts">
+        <NavLink to="/contacts" className="Contacts">
           <Button variant="contained" color="secondary">
             Contacts
           </Button>
@@ -39,7 +39,12 @@ const AuthNav = ({ userName, isAuthorized, onLogout }) => {
           <p>
             Hello, <span>{userName}</span>
           </p>
-          <button onClick={onLogout}>Logout</button>
+          <div className="Logout">
+            {" "}
+            <Button variant="contained" color="secondary" onClick={onLogout}>
+              Logout
+            </Button>
+          </div>
         </div>
       )}
     </div>
