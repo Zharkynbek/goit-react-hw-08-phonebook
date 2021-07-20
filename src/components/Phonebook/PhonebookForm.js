@@ -72,7 +72,6 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(
-  // null,
-  (state) => ({ contacts: state.contacts }),
+  (state) => ({ contacts: state.phonebook.contacts }),
   mapDispatchToProps
 )(PhonebookForm);

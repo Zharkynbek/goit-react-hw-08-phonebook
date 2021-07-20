@@ -1,4 +1,4 @@
-const getFilterValue = (state) => state.filter;
+const getFilterValue = (state) => state.phonebook.filter;
 const getContactList = (state) => state.contacts;
 
 const selector = {

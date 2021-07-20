@@ -32,7 +32,7 @@ const PhonebookList = ({
 
 const mapStateToProps = (state) => {
   return {
-    contacts: state.contacts,
+    contacts: state.phonebook.contacts,
     filter: phonebookSelectors.getFilterValue(state),
   };
 };

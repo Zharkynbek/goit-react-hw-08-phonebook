@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Button } from "@material-ui/core";
 import { NavLink } from "react-router-dom";
+import { connect } from "react-redux";
+import authOperations from "../redux/auth/auth-operations";
 
 class LoginView extends Component {
   state = {
@@ -8,12 +10,20 @@ class LoginView extends Component {
     password: "",
   };
 
+  componentDidMount() {
+    this.setState({
+      email: "klklklkl@mail.com",
+      password: "klklklkl123",
+    });
+  }
+
   handleChange = ({ target: { name, value } }) => {
     this.setState({ [name]: value });
   };
 
   handleSubmit = (e) => {
     e.preventDefault();
+    this.props.onLogin(this.state);
     this.setState({ name: "", email: "", password: "" });
   };
 
@@ -23,11 +33,11 @@ class LoginView extends Component {
     return (
       <div>
         <h1>Please, Sign In</h1>
-        <NavLink to="/" className="GoBack">
+        {/* <NavLink to="/" className="GoBack">
           <Button variant="contained" color="primary">
             Go Back
           </Button>
-        </NavLink>
+        </NavLink> */}
 
         <form onSubmit={this.handleSubmit} autoComplete="off">
           <label>
@@ -58,4 +68,8 @@ class LoginView extends Component {
     );
   }
 }
-export default LoginView;
+
+const mapDispatchToProps = {
+  onLogin: authOperations.login,
+};
+export default connect(null, mapDispatchToProps)(LoginView);

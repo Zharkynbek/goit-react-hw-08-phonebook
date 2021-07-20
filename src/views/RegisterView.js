@@ -28,11 +28,11 @@ class RegisterView extends Component {
     return (
       <div>
         <h1>Registration Page</h1>
-        <NavLink to="/" className="GoBack">
+        {/* <NavLink to="/" className="GoBack">
           <Button variant="contained" color="primary">
             Go Back
           </Button>
-        </NavLink>
+        </NavLink> */}
 
         <form onSubmit={this.handleSubmit} autoComplete="on">
           <label>
