@@ -61,9 +61,7 @@ class PhonebookForm extends Component {
             />
           </label>
           <br />
-          <Button variant="contained" color="secondary">
-            Add Contact
-          </Button>
+          <button className="btnAddContact">Add Contact</button>
         </form>
       </div>
     );

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Button } from "@material-ui/core";
-import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import authOperations from "../redux/auth/auth-operations";
 
@@ -28,11 +27,6 @@ class RegisterView extends Component {
     return (
       <div>
         <h1>Registration Page</h1>
-        {/* <NavLink to="/" className="GoBack">
-          <Button variant="contained" color="primary">
-            Go Back
-          </Button>
-        </NavLink> */}
 
         <form onSubmit={this.handleSubmit} autoComplete="on">
           <label>

@@ -121,8 +121,26 @@ ul {
   top: 0;
   left: 20px;
   display: inline-block;
-
   text-decoration: none;
   margin: 12px;
   font-weight: 700px;
 }
+
+.btnAddContact {
+  font-size: 15px;
+  padding: 9px;
+  border-radius: 8px;
+  background-color: red;
+}
+
+.btnDelete {
+  padding: 4px;
+  border-radius: 5px;
+  background-color: red;
+}
+
+/* .userName {
+  position: absolute;
+  top: 0;
+  right: 200px;
+} */

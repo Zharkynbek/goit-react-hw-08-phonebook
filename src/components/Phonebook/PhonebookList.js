@@ -23,7 +23,9 @@ const PhonebookList = ({
         <li key={id}>
           <p>{name}</p>
           <p>{number}</p>
-          <button onClick={() => onDeleteContact(id)}>Delete</button>
+          <button onClick={() => onDeleteContact(id)} className="btnDelete">
+            Delete
+          </button>
         </li>
       ))}
     </ul>

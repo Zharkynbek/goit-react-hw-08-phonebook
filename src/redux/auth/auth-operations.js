@@ -24,7 +24,7 @@ const register = (credentials) => (dispatch) => {
     .catch((error) => dispatch(authActions.registerError(error.message)));
 };
 
-const login = (credentials) => (dispatch) => {
+export const login = (credentials) => (dispatch) => {
   dispatch(authActions.loginRequest());
 
   axios
@@ -62,7 +62,7 @@ const getCurrentUser = () => (dispatch, getState) => {
   axios
     .get("/users/current")
     .then(({ data }) => dispatch(authActions.getCurrentUserSuccess(data)))
-    .catch((error) => dispatch(authActions.getCurrentUserError(error.message)));
+    .catch((err) => dispatch(authActions.getCurrentUserError(err.message)));
 };
 
 export default {

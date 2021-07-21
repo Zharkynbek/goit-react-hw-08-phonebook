@@ -36,7 +36,7 @@ const AuthNav = ({ userName, isAuthorized, onLogout }) => {
         </div>
       ) : (
         <div>
-          <p>
+          <p className="userName">
             Hello, <span>{userName}</span>
           </p>
           <div className="Logout">

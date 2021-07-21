@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Button } from "@material-ui/core";
-import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import authOperations from "../redux/auth/auth-operations";
 
