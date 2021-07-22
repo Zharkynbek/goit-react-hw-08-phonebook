@@ -1,13 +1,20 @@
-import React, { useEffect } from "react";
-import { Route, Switch } from "react-router-dom";
-import Phonebook from "./components/Phonebook/Phonebook";
+import React, { useEffect, Suspense, lazy } from "react";
+import { Switch } from "react-router-dom";
+// import Phonebook from "./components/Phonebook/Phonebook";
 import Loader from "./loader/loader";
 import { connect } from "react-redux";
-import RegisterView from "./views/RegisterView";
-import HomeView from "./views/HomeView";
-import LoginView from "./views/LoginView";
+// import RegisterView from "./views/RegisterView";
+// import HomeView from "./views/HomeView";
+// import LoginView from "./views/LoginView";
 import AuthNav from "./components/AuthNav";
 import getCurrentUser from "./redux/auth/auth-operations";
+import PrivateRoute from "./components/PrivateRoute";
+import PublicRoute from "./components/PublicRoute";
+
+const HomeView = lazy(() => import("./views/HomeView"));
+const RegisterView = lazy(() => import("./views/RegisterView"));
+const LoginView = lazy(() => import("./views/LoginView"));
+const Phonebook = lazy(() => import("./components/Phonebook/Phonebook"));
 
 function App({ isLoading, updateUser }) {
   useEffect(() => {
@@ -17,12 +24,28 @@ function App({ isLoading, updateUser }) {
     <div>
       {isLoading && <Loader />}
       <AuthNav />
-      <Switch>
-        <Route exact path="/" component={HomeView} />
-        <Route path="/register" component={RegisterView} />
-        <Route path="/login" component={LoginView} />
-        <Route path="/contacts" component={Phonebook} />
-      </Switch>
+      <Suspense fallback={<p>Loaded...</p>}>
+        <Switch>
+          <PublicRoute exact path="/" component={HomeView} />
+          <PublicRoute
+            path="/register"
+            restricted
+            redirectTo="/contacts"
+            component={RegisterView}
+          />
+          <PublicRoute
+            path="/login"
+            restricted
+            redirectTo="/contacts"
+            component={LoginView}
+          />
+          <PrivateRoute
+            path="/contacts"
+            redirectTo="/contacts"
+            component={Phonebook}
+          />
+        </Switch>
+      </Suspense>
     </div>
   );
 }

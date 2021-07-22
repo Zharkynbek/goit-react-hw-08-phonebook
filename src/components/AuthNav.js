@@ -15,11 +15,13 @@ const AuthNav = ({ userName, isAuthorized, onLogout }) => {
             Home
           </Button>
         </NavLink>
-        <NavLink to="/contacts" className="Contacts">
-          <Button variant="contained" color="secondary">
-            Contacts
-          </Button>
-        </NavLink>
+        {isAuthorized && (
+          <NavLink to="/contacts" className="Contacts">
+            <Button variant="contained" color="secondary">
+              Contacts
+            </Button>
+          </NavLink>
+        )}
       </div>
       {!isAuthorized ? (
         <div>
