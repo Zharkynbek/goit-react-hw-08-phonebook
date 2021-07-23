@@ -1,6 +1,6 @@
-import PhonebookForm from "./PhonebookForm";
-import PhonebookList from "./PhonebookList";
-import PhonebookFilter from "./PhonebookFilter";
+import PhonebookForm from "./PhonebookForm/PhonebookForm.container";
+import PhonebookList from "./PhonebookList/PhonebookList.container";
+import PhonebookFilter from "./PhonebookFilter/PhonebookFilter.container";
 import { connect } from "react-redux";
 
 function Phonebook({ contacts, filter }) {

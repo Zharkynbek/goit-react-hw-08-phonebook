@@ -64,9 +64,9 @@ const getCurrentUser = () => (dispatch, getState) => {
     .then(({ data }) => dispatch(authActions.getCurrentUserSuccess(data)))
     .catch((err) => dispatch(authActions.getCurrentUserError(err.message)));
 };
-
-export default {
+const obj = {
   register,
   login,
   getCurrentUser,
 };
+export default obj;

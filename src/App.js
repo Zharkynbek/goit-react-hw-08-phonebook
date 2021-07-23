@@ -1,30 +1,25 @@
 import React, { useEffect, Suspense, lazy } from "react";
 import { Switch } from "react-router-dom";
-// import Phonebook from "./components/Phonebook/Phonebook";
 import Loader from "./loader/loader";
 import { connect } from "react-redux";
-// import RegisterView from "./views/RegisterView";
-// import HomeView from "./views/HomeView";
-// import LoginView from "./views/LoginView";
-import AuthNav from "./components/AuthNav";
+import AuthNav from "./components/Navigation/AuthNav.container";
 import getCurrentUser from "./redux/auth/auth-operations";
-import PrivateRoute from "./components/PrivateRoute";
-import PublicRoute from "./components/PublicRoute";
+import PrivateRoute from "./components/Routes/PrivatRoute/PrivatRoute.container";
+import PublicRoute from "./components/Routes/PublicRoute/PublicRoute.container";
 
 const HomeView = lazy(() => import("./views/HomeView"));
 const RegisterView = lazy(() => import("./views/RegisterView"));
 const LoginView = lazy(() => import("./views/LoginView"));
 const Phonebook = lazy(() => import("./components/Phonebook/Phonebook"));
 
-function App({ isLoading, updateUser }) {
+function App({ updateUser }) {
   useEffect(() => {
     updateUser();
   }, [updateUser]);
   return (
     <div>
-      {isLoading && <Loader />}
       <AuthNav />
-      <Suspense fallback={<p>Loaded...</p>}>
+      <Suspense fallback={<Loader />}>
         <Switch>
           <PublicRoute exact path="/" component={HomeView} />
           <PublicRoute
@@ -50,12 +45,8 @@ function App({ isLoading, updateUser }) {
   );
 }
 
-const mapStateToProps = (state) => ({
-  isLoading: state.loading,
-});
-
 const mapDispatchToProps = (dispatch) => ({
   updateUser: () => dispatch(getCurrentUser.getCurrentUser()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App);
