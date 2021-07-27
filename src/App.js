@@ -34,11 +34,7 @@ function App({ updateUser }) {
             redirectTo="/contacts"
             component={LoginView}
           />
-          <PrivateRoute
-            path="/contacts"
-            redirectTo="/contacts"
-            component={Phonebook}
-          />
+          <PrivateRoute path="/contacts" redirectTo="/" component={Phonebook} />
         </Switch>
       </Suspense>
     </div>
